@@ -6,7 +6,7 @@
    $lname = $_POST['lastName'];
    $suff = $_POST['suffix'];
    $phone = $_POST['numPhone'];
-   $email = $_POST['email'];
+   $email = $_POST['Email'];
    $gradYear = $_POST['gradYear'];
    $degree = $_POST['degreeConcentration'];
    $jobTitle = $_POST['jobTitle'];
@@ -47,7 +47,8 @@
    }else {
       echo json_encode(array(
          'error'=> true,
-         'message' => 'Error sending message'
+         'message' => $to,$subject,$message,$header
+
       ));
    }
 ?>
