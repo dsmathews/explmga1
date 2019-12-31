@@ -23,7 +23,7 @@ $(document).ready(function () {
     let degree = ''
     let title = ''
     let company = ''
-    let pict = null
+    let pict = pic.files
     let jDesc = ''
     let mGA = ''
     let story = ''
@@ -63,7 +63,7 @@ $(document).ready(function () {
         company = emp.val()
     }
     function updatePIC() {
-        pict = pic.val()
+        pict = pic.files[0]
     }
     function updateJD() {
         jDesc = jobDesc.val()
@@ -122,9 +122,10 @@ $(document).ready(function () {
             biography: story,
             agreement: acceptance
         };
-        
-        console.table(collection)
 
+
+        console.log(pict)
+        console.table(collection)
         let collectSend = JSON.stringify(collection)
 
         $.ajax({
@@ -149,7 +150,7 @@ $(document).ready(function () {
     $('#gradYear').on('keyup', updateGrad);
     $('#degreeConcentration').on('keyup', updateDeg);
     $('#jobTitle').on('keyup', updateTitle);
-    $('#photo').on('select', updatePIC)
+    $('#photo').on('change', updatePIC)
     $('#employer').on('keyup', updateComp);
     $('#jobDescription').on('keyup', updateJD);
     $('#whatFromMGA').on('keyup', updateMGA);

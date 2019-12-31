@@ -19,14 +19,14 @@
    $to = "darrell.mathews@mga.edu";
    $subject = "Successful Alumni Form Data";
    // Email Template
-   $message = "<b>Name : </b>". $fname . $lname . $suff ."<br>\n";
+   $message = "<b>Name : </b>".$fname.$lname.$suff."<br>\n";
    $message .= "<b>Phone Number : </b>".$phone."<br>\n";
    $message .= "<b>Email Address : </b>".$email."<br>\n";
    $message .= "<b>Graduation Year : </b>".$gradYear."<br>\n";
    $message .= "<b>Degree : </b>".$degree."<br>\n";
    $message .= "<b>Job Title : </b>".$jobTitle."<br>\n";
    $message .= "<b>Employer : </b>".$employer."<br>\n";
-   $message .= "<b>Photo : </b>".$photo."<br>\n";
+   $message .= "<b>Photo : </b><img src=".$photo."><br>\n";
    $message .= "<b>Job Description : </b>".$jobDescriptiton."<br>\n";
    $message .= "<b>How did MGA help me be to be successful? : </b>".$receivedFromMGA."<br>\n";
    $message .= "<b>Biography : </b>".$biography."<br>\n";
@@ -50,5 +50,5 @@
          'message' => $to,$subject,$message,$header
 
       ));
-   }
+   };
 ?>
