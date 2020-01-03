@@ -42,7 +42,7 @@
    if( $retval == true ) {
       echo json_encode(array(
          'success'=> true,
-         'message' => 'Message sent successfully'
+         'message' => $to,$subject,$message,$header
       ));
    }else {
       echo json_encode(array(

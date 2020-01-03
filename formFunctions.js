@@ -62,8 +62,8 @@ $(document).ready(function () {
     function updateComp() {
         company = emp.val()
     }
-    function updatePIC() {
-        pict = pic.files[0]
+    function updatePIC(e) {
+        pict = e.target.files[0].name
     }
     function updateJD() {
         jDesc = jobDesc.val()
