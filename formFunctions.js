@@ -103,44 +103,45 @@ $(document).ready(function () {
         }
     };
 
-    function sendStuff(event) {
-        event.preventDefault();
+    // function sendStuff(event) {
+    //     console.log("validate")
+    //     event.preventDefault();
         
-        let collection = {
-            firstName: fName,
-            lastName: lName,
-            suffix: suffX,
-            numPhone: numbers,
-            Email: electronicM,
-            gradYear: graduation,
-            degreeConcentration: degree,
-            jobTitle: title,
-            employer: company,
-            photo: pict,
-            jobDescription: jDesc,
-            receivedFromMGA: mGA,
-            biography: story,
-            agreement: acceptance
-        };
+    //     let collection = {
+    //         firstName: fName,
+    //         lastName: lName,
+    //         suffix: suffX,
+    //         numPhone: numbers,
+    //         Email: electronicM,
+    //         gradYear: graduation,
+    //         degreeConcentration: degree,
+    //         jobTitle: title,
+    //         employer: company,
+    //         photo: pict,
+    //         jobDescription: jDesc,
+    //         receivedFromMGA: mGA,
+    //         biography: story,
+    //         agreement: acceptance
+    //     };
 
 
-        console.log(pict)
-        console.table(collection)
-        let collectSend = JSON.stringify(collection)
+    //     console.log(pict)
+    //     console.table(collection)
+    //     let collectSend = JSON.stringify(collection)
 
-        $.ajax({
-            url:'mail.php',
-            type: "POST",
-            data: collectSend,
-            dataType: 'JSON'
-        }).done(function (data) {
-            console.log(data);
-            alert("It's OK!");
-        }).fail(function (data) {
-            console.log(data);
-            console.log(collection)
-        });
-    }
+    //     $.ajax({
+    //         url:'mail.php',
+    //         type: "POST",
+    //         data: collection,
+    //         dataType: 'JSON'
+    //     }).done(function (data) {
+    //         console.log(data);
+    //         alert("It's OK!");
+    //     }).fail(function (data) {
+    //         console.log(data);
+    //         // console.log(collection)
+    //     });
+    // }
 
     $('#firstName').on('keyup', updateFirst);
     $('#lastName').on('keyup', updateLast);
@@ -156,6 +157,6 @@ $(document).ready(function () {
     $('#whatFromMGA').on('keyup', updateMGA);
     $('#biography').on('keyup', updateStory);
     $('#agreement').on('click', formCheck);
-    $('#submit').on('click', sendStuff);
+    // $('#submit').on('click', sendStuff);
 
 });

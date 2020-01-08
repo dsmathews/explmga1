@@ -9,72 +9,74 @@
 </head>
 
 <body>
-    <form method="POST">
+
+    <form method="POST" action="mail.php">
         <label for="firstName">First Name: </label>
-        <input type="text" id="firstName" pattern="[A-Za-z]{2,15}" required />
-        
+        <input type="text" name="firstName" id="firstName" pattern="[A-Za-z]{2,15}" required />
+
         <label for="lastName">Last Name: </label>
-        <input type="text" id="lastName" pattern="[A-Za-z]{2,15}" required />
-        
+        <input type="text" name="lastName" id="lastName" pattern="[A-Za-z]{2,15}" required />
+
         <label for="suffix">Suffix: </label>
-        <input type="text" id="suffix" maxlength="5" />
+        <input type="text" name="suffix" id="suffix" maxlength="5" />
         <br />
         <br />
         <p>Personal information such as Phone Number and Email will not be shared.</p>
         <label for="phone">Phone Number: </label>
-        <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+        <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
         <label for="email">Email: </label>
-        <input type="email" id="email" pattern="[A-Za-z0-9.]*@[A-Za-z0-9]*.[a-z]{3,5}" required />
+        <input type="email" name="email" id="email" pattern="[A-Za-z0-9.]*@[A-Za-z0-9]*.[a-z]{3,5}" required />
         <br />
         <br />
         <label for="gradYear">Graduation Year: </label>
-        <input type="text" id="gradYear" pattern="[0-9]{1,4}" maxlength="4" required />
-        
+        <input type="text" name="gradYear" id="gradYear" pattern="[0-9]{1,4}" maxlength="4" required />
+
         <label for="degreeConcetration">MGA Degree Concentration: </label>
-        <input type="text" id="degreeConcentration" maxlength="40" required />
+        <input type="text" name="degreeConcentration" id="degreeConcentration" maxlength="40" required />
         <br />
         <br />
         <label for="jobTitle">Current Job Title: </label>
-        <input type="text" id="jobTitle" required />
+        <input type="text" name="jobTitle" id="jobTitle" required />
         <label for="employer">Employer: </label>
-        <input type="text" id="employer" required />
+        <input type="text" name="employer" id="employer" required />
         <br />
         <br />
         <label for="photo">Please upload a recent photo</label>
-        <input type="file" id="photo" required />
+        <input type="file" name="photo" id="photo" required />
         <br />
         <br />
         <label for="jobDescription">Job Description: (255 Character Max.)</label>
         <br />
-        <textarea id="jobDescription" cols="60" rows="15" maxlength="255" required></textarea>
+        <textarea id="jobDescription" name="jobDescription" cols="60" rows="15" maxlength="255" required></textarea>
         <br />
         <br />
         <label for="whatFromMGA">What did MGA do to help make you successful? (255 Character Max.)</label>
         <br />
-        <textarea id="whatFromMGA" cols="60" rows="15" maxlength="255" required></textarea>
+        <textarea id="whatFromMGA" name="receivedFromMGA" cols="60" rows="15" maxlength="255" required></textarea>
         <br />
         <br />
         <label for="biography">Please provide a short biography (255 Character Max.)</label>
         <br />
-        <textarea id="biography" cols="60" rows="15" maxlength="255" required></textarea>
+        <textarea id="biography" name="biography" cols="60" rows="15" maxlength="255" required></textarea>
         <br />
         <br />
-        <input type="checkbox" id="agreement" required><label for="checkbox">By submitting, I agree that my image and
-            information can be used by Middle Georgia State University(MGA), MGA School of Computing - Department of Information Technology, and
+        <input type="checkbox" name="agreement" id="agreement" required /><label for="checkbox">By submitting, I agree that my image and
+            information can be used by Middle Georgia State University(MGA), MGA School of Computing - Department of
+            Information Technology, and
             MGA Marketing.</label>
-            <br />
-            <button type="submit" id="submit" disabled>Submit</button>
-            <button type="reset">Reset</button>
-            <br />
-            <br />
-            
-            
-        </form>
-        
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.js"
+        <br />
+        <button type="submit" id="submit" disabled>Submit</button>
+        <button type="reset">Reset</button>
+        <br />
+        <br />
+
+
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="formFunctions.js"></script>
-    </body>
-    
-    </html>
+    <script type="text/javascript" src="formFunctions.js"></script>
+</body>
+
+</html>
