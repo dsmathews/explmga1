@@ -9,7 +9,7 @@
    $degree = $_POST['degreeConcentration'];
    $jobTitle = $_POST['jobTitle'];
    $employer = $_POST['employer'];
-   // $photo = $_POST['photo'];
+   $photo = $_POST['photo'];
    $jobDescriptiton = $_POST['jobDescription'];
    $receivedFromMGA = $_POST['receivedFromMGA'];
    $biography = $_POST['biography'];
@@ -26,31 +26,24 @@
    $message .= "<b>Degree : </b>".$degree."\r\n";
    $message .= "<b>Job Title : </b>".$jobTitle."\r\n";
    $message .= "<b>Employer : </b>".$employer."\r\n";
-   // $message .= "<b>Photo : </b><img src=".$photo."><br>\n";
+   $message .= "<b>Photo : </b><img src=".$photo."><br>\n";
    $message .= "<b>Job Description : </b>".$jobDescriptiton."\r\n";
    $message .= "<b>How did MGA help me be to be successful? : </b>".$receivedFromMGA."\r\n";
    $message .= "<b>Biography : </b>".$biography."\r\n";
    $message .= "<b>Consent to use of information : </b>".$agreement."\r\n";
    
-   $messages = wordwrap($message, 70);
+   $messages = wordwrap($message, 70, "\r\n");
    
    $headers = "From: $fname. $lname\r\n";
    $headers .="Reply-to: $email. \r\n";
-   // $headers .= "MIME-Version: 1.0\r\n";
-   $headers .= "Content-type: text/html\r\n";
-   $val = mail($to,$subject,$messages,$headers);
-   if( $val == true ) {
+   $headers .= "X-Mailer: PHP/" . phpversion();
+   $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+   $headers .= "MIME-Version: 1.0\r\n";
+   $retval = mail($to,$subject,$message,$headers);
+   if( $retval == true ) {
       header('Location: thank-you.html');
-      echo json_encode(array(
-         'success'=> true,
-         'message' => 'Message sent successfully'
-      ));
-   }else {
-      echo json_encode(array(
-         'error'=> true,
-         'message' => $to,$subject,$messages,$headers
-
-      ));
+   } else {
+      echo "Error sending mail.";
    }
    
    // message Notification
